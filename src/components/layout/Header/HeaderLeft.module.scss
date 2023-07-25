@@ -1,0 +1,42 @@
+@use "/src/assets/styles/colors";
+
+.headerLeft {
+  width: 25vw;
+  height: 100%;
+  border-right: 2px solid black;
+  transition: 0.3s;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .icons {
+    font-size: 30px;
+    padding: 4px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: colors.$active-gray;
+    }
+  }
+
+  .activeIcon {
+    background-color: colors.$active-gray;
+  }
+
+  .formatNotes {
+    display: flex;
+    gap: 6px;
+    margin-left: 10px;
+  }
+
+  .deleteBtn {
+    margin-right: 10px;
+  }
+}
+
+.tileFormat {
+  border-right: 1px solid colors.$gray;
+  transition: 0.3s;
+}

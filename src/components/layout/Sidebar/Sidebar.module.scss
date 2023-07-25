@@ -1,0 +1,15 @@
+@use "/src/assets/styles/colors";
+
+.sidebar {
+  background-color: colors.$background-gray;
+  height: 100%;
+  width: 25vw;
+  position: absolute;
+  border-right: 2px solid black;
+  transition: 0.3s;
+}
+
+.close {
+  transform: translateX(-25vw);
+  transition: 0.3s;
+}
