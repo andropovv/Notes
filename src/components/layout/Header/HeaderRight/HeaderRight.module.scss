@@ -1,0 +1,22 @@
+@use "/src/assets/styles/colors";
+
+.headerRight {
+  padding: 10px;
+  width: 75vw;
+  height: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .icons {
+    font-size: 40px;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: colors.$active-gray;
+    }
+  }
+}

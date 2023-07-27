@@ -4,6 +4,7 @@ import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
 import GridViewIcon from "@mui/icons-material/GridView";
 import { observer } from "mobx-react-lite";
 import { formatNotes } from "../../../store/notesFormat";
+import AddIcon from "@mui/icons-material/Add";
 
 const HeaderLeft = observer(() => {
   const styleHeaderLeft =
@@ -38,8 +39,9 @@ const HeaderLeft = observer(() => {
         />
         <GridViewIcon className={styleTileBtn} onClick={handlePressTileBtn} />
       </div>
-      <div className={styles.deleteBtn}>
-        <DeleteOutlineIcon className={styles.icons} />
+      <div className={styles.addDelBtn}>
+        <AddIcon className={styles.icons} />
+        <DeleteOutlineIcon className={styles.icons + " " + styles.deleteBtn} />
       </div>
     </div>
   );

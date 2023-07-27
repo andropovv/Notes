@@ -7,9 +7,11 @@
   position: absolute;
   border-right: 2px solid black;
   transition: 0.3s;
+  padding: 20px;
+  overflow: scroll;
 }
 
 .close {
-  transform: translateX(-25vw);
+  transform: translateX(-100vw);
   transition: 0.3s;
 }

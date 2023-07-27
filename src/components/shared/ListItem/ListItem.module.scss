@@ -1,0 +1,15 @@
+@use "/src/assets/styles/colors";
+
+.listItem {
+  height: 80px;
+  width: 22vw;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-bottom: 1px solid colors.$gray;
+  cursor: pointer;
+
+  &:hover {
+    border-radius: 8px;
+    background-color: colors.$gray;
+  }
+}

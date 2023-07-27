@@ -1,0 +1,40 @@
+.workspace {
+  position: absolute;
+  display: flex;
+  padding: 20px;
+  right: 0;
+  height: 100%;
+  width: 75vw;
+  color: aliceblue;
+}
+
+.workspaceForList {
+  animation: open-space 1s;
+}
+
+.workspaceForTile {
+  animation: 0.3s close-space forwards;
+}
+
+@keyframes close-space {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100vw);
+    display: none;
+  }
+}
+
+@keyframes open-space {
+  0% {
+    opacity: 0;
+    display: flex;
+  }
+  30% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
