@@ -1,21 +1,23 @@
 import { observer } from "mobx-react-lite";
 import styles from "./Sidebar.module.scss";
 import { formatNotes } from "../../../store/notesFormat";
+import { myNotes } from "../../../store/notes";
 import ListItem from "../../shared/ListItem";
 
 const Sidebar = observer(() => {
+  const { notes } = myNotes;
+
   const sidebarStyles =
     formatNotes.format === "list"
       ? styles.sidebar
       : `${styles.sidebar} ${styles.close}`;
 
-  const notes = [1, 2, 3, 4, 5, 6, 7, 8];
+  if (myNotes.isLoading) return <div>loading</div>;
 
   return (
     <div className={sidebarStyles}>
-      {notes.map((n) => (
-        <ListItem key={n} />
-      ))}
+      {notes &&
+        notes.map((n) => <ListItem id={n.id} key={n.id} title={n.title} />)}
     </div>
   );
 });

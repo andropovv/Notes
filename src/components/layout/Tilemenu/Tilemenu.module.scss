@@ -3,12 +3,13 @@
 .container {
   background-color: colors.$background-gray;
   height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   padding: 0 100px;
   transition: 0.3s;
   position: absolute;
-  overflow-y: scroll;
+  overflow-y: auto;
 
   .menu {
     display: flex;

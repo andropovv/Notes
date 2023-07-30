@@ -10,6 +10,13 @@
 
   &:hover {
     border-radius: 8px;
-    background-color: colors.$gray;
+    border: none;
+    background-color: colors.$active-gray;
   }
+}
+
+.active {
+  border-radius: 8px;
+  border: none;
+  background-color: colors.$active-gray;
 }

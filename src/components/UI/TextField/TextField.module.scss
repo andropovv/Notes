@@ -1,0 +1,38 @@
+@use "/src/assets/styles/colors";
+
+.container {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  input {
+    width: 350px;
+    height: 40px;
+    border: 1px colors.$gray solid;
+    border-radius: 5px;
+    font-size: 20px;
+    display: block;
+    padding-left: 20px;
+    outline: none;
+    background-color: colors.$background-gray;
+
+    &::placeholder {
+      color: colors.$gray;
+    }
+
+    &:hover {
+      border-color: colors.$white;
+    }
+  }
+
+  label {
+    font-size: 28px;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  p {
+    margin: 5px;
+  }
+}

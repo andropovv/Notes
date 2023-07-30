@@ -1,12 +1,24 @@
 import styles from "./HeaderLeft.module.scss";
+import { useState } from "react";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
 import GridViewIcon from "@mui/icons-material/GridView";
 import { observer } from "mobx-react-lite";
 import { formatNotes } from "../../../store/notesFormat";
 import AddIcon from "@mui/icons-material/Add";
+import AddNoteModal from "../../shared/AddNoteModal";
+import DeleteNoteModal from "../../shared/DeleteNoteModal";
+import { myNotes } from "../../../store/notes";
 
 const HeaderLeft = observer(() => {
+  const [modalAddOpen, setModalAddOpen] = useState<boolean>(false);
+  const handleAddOpen = () => setModalAddOpen(true);
+  const handleAddClose = () => setModalAddOpen(false);
+
+  const [modalDeleteOpen, setModalDeleteOpen] = useState<boolean>(false);
+  const handleDeleteOpen = () => setModalDeleteOpen(true);
+  const handleDeleteClose = () => setModalDeleteOpen(false);
+
   const styleHeaderLeft =
     formatNotes.format === "list"
       ? styles.headerLeft
@@ -40,9 +52,20 @@ const HeaderLeft = observer(() => {
         <GridViewIcon className={styleTileBtn} onClick={handlePressTileBtn} />
       </div>
       <div className={styles.addDelBtn}>
-        <AddIcon className={styles.icons} />
-        <DeleteOutlineIcon className={styles.icons + " " + styles.deleteBtn} />
+        <AddIcon className={styles.icons} onClick={handleAddOpen} />
+        {myNotes.currentNoteId ? (
+          <DeleteOutlineIcon
+            className={styles.icons}
+            onClick={handleDeleteOpen}
+          />
+        ) : (
+          <DeleteOutlineIcon
+            className={styles.icons + " " + styles.deleteDisabledBtn}
+          />
+        )}
       </div>
+      <AddNoteModal open={modalAddOpen} onClose={handleAddClose} />
+      <DeleteNoteModal open={modalDeleteOpen} onClose={handleDeleteClose} />
     </div>
   );
 });

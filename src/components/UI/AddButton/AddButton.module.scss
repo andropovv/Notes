@@ -1,0 +1,15 @@
+@use "/src/assets/styles/colors";
+
+.addButton {
+  width: 150px;
+  height: 30px;
+  border: 1px colors.$gray solid;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: colors.$background-gray;
+
+  &:hover {
+    border: 1px colors.$white solid;
+    background-color: colors.$active-gray;
+  }
+}

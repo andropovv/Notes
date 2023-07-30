@@ -2,9 +2,10 @@ import { observer } from "mobx-react-lite";
 import { formatNotes } from "../../../store/notesFormat";
 import TileItem from "../../shared/TileItem/TileItem";
 import styles from "./Tilemenu.module.scss";
+import { myNotes } from "../../../store/notes";
 
 const TileMenu = observer(() => {
-  const tiles = [1, 2, 3, 4, 5, 6, 7, 8];
+  const { notes } = myNotes;
 
   const menuStyles =
     formatNotes.format === "tile"
@@ -15,8 +16,8 @@ const TileMenu = observer(() => {
     <div className={menuStyles}>
       <h3>Сегодня</h3>
       <div className={styles.menu}>
-        {tiles.map((t) => (
-          <TileItem key={t} />
+        {notes.map((n) => (
+          <TileItem key={n.id} title={n.title} />
         ))}
       </div>
     </div>

@@ -51,6 +51,11 @@
   .addDelBtn {
     display: flex;
     gap: 6px;
+
+    .deleteDisabledBtn {
+      cursor: default;
+      color: colors.$gray;
+    }
   }
 }
 

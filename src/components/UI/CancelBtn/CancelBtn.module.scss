@@ -1,0 +1,15 @@
+@use "/src/assets/styles/colors";
+
+.cancelBtn {
+  width: 150px;
+  height: 30px;
+  border: 1px colors.$gray solid;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: colors.$background-gray;
+
+  &:hover {
+    border: 1px colors.$active-gray solid;
+    background-color: colors.$active-gray;
+  }
+}
