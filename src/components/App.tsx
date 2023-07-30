@@ -35,7 +35,7 @@ const App = observer(() => {
       <Header />
       <Sidebar />
       <TileMenu />
-      {!myNotes.isLoading && <Workspace />}
+      <Workspace />
     </>
   );
 });

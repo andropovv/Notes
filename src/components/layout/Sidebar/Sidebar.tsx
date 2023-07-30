@@ -17,7 +17,9 @@ const Sidebar = observer(() => {
   return (
     <div className={sidebarStyles}>
       {notes &&
-        notes.map((n) => <ListItem id={n.id} key={n.id} title={n.title} />)}
+        notes.map((n) => (
+          <ListItem id={n.id} key={n.id} title={n.title} content={n.content} />
+        ))}
     </div>
   );
 });

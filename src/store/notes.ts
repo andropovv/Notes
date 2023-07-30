@@ -27,7 +27,7 @@ class Notes {
     this.isLoading = false;
   }
 
-  getNoteById(id: null | number) {
+  getNoteById(id: null | number): INote | undefined {
     const foundedNote = this.notes.find((n) => n.id === id);
     return foundedNote;
   }

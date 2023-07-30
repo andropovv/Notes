@@ -22,6 +22,7 @@ const DeleteNoteModal: FC<DeleteNoteModalProps> = ({ open, onClose }) => {
 
       const notesFromDB = await getAll();
       myNotes.setNotes(notesFromDB);
+      myNotes.setCurrentId(null);
     } catch (error) {
       console.log("Ошибка при удалении - " + error);
     } finally {

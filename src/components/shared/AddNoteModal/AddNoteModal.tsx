@@ -7,6 +7,7 @@ import AddButton from "../../UI/AddButton";
 import { useIndexedDB } from "react-indexed-db-hook";
 import CancelBtn from "../../UI/CancelBtn";
 import { myNotes } from "../../../store/notes";
+import { editor } from "../../../editor";
 
 interface AddNoteModalProps {
   open: boolean;
@@ -21,12 +22,13 @@ const AddNoteModal: FC<AddNoteModalProps> = ({ onClose, open }) => {
     try {
       myNotes.startLoading();
 
-      const id = await add({ title: title, content: {} });
+      const id = await add({ title: title, content: "" });
 
       const notesFromDB = await getAll();
       myNotes.setNotes(notesFromDB);
 
       myNotes.setCurrentId(id);
+      editor.commands.setContent("");
     } catch (error) {
       console.log(error);
     } finally {
