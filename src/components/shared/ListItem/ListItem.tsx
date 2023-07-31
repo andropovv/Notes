@@ -4,11 +4,12 @@ import { myNotes } from "../../../store/notes";
 import { observer } from "mobx-react-lite";
 import { editor } from "../../../editor";
 import { HTMLContent } from "@tiptap/react";
+import parse from "html-react-parser";
 
 interface ListItemProps {
   title: string;
   id: number;
-  content: HTMLContent | JSON | "";
+  content: HTMLContent | "";
 }
 
 const ListItem: FC<ListItemProps> = observer(({ title, id, content }) => {
@@ -24,7 +25,10 @@ const ListItem: FC<ListItemProps> = observer(({ title, id, content }) => {
 
   return (
     <div className={itemStyle} onClick={handleClick}>
-      {title}
+      <h4>{title}</h4>
+      <div className={styles.content}>
+        <p>{parse(content)}</p>
+      </div>
     </div>
   );
 });

@@ -12,9 +12,15 @@
     border: 1px solid colors.$active-gray;
     margin-bottom: 10px;
     cursor: pointer;
+    padding: 20px;
+    overflow: hidden;
+    * {
+      text-align: start;
+    }
 
     &:hover {
       border: 1px solid colors.$orange;
+      background-color: colors.$active-gray;
     }
   }
 

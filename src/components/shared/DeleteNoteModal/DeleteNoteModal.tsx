@@ -6,6 +6,7 @@ import CancelBtn from "../../UI/CancelBtn";
 import DeleteBtn from "../../UI/DeleteBtn";
 import { useIndexedDB } from "react-indexed-db-hook";
 import { myNotes } from "../../../store/notes";
+import { editor } from "../../../editor";
 
 interface DeleteNoteModalProps {
   open: boolean;
@@ -23,6 +24,7 @@ const DeleteNoteModal: FC<DeleteNoteModalProps> = ({ open, onClose }) => {
       const notesFromDB = await getAll();
       myNotes.setNotes(notesFromDB);
       myNotes.setCurrentId(null);
+      editor.commands.clearContent;
     } catch (error) {
       console.log("Ошибка при удалении - " + error);
     } finally {

@@ -12,12 +12,13 @@ const TileMenu = observer(() => {
       ? styles.container
       : `${styles.container} ${styles.close}`;
 
+  if (myNotes.currentNoteId) return null;
+
   return (
     <div className={menuStyles}>
-      <h3>Сегодня</h3>
       <div className={styles.menu}>
         {notes.map((n) => (
-          <TileItem key={n.id} title={n.title} />
+          <TileItem key={n.id} title={n.title} content={n.content} id={n.id} />
         ))}
       </div>
     </div>

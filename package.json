@@ -19,6 +19,7 @@
     "@tiptap/react": "^2.0.4",
     "@tiptap/starter-kit": "^2.0.4",
     "dexie-react-hooks": "^1.1.6",
+    "html-react-parser": "^4.2.0",
     "lodash": "^4.17.21",
     "mobx": "^6.10.0",
     "mobx-react-lite": "^4.0.3",

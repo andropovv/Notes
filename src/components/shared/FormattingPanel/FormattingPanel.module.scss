@@ -1,0 +1,12 @@
+@use "/src/assets/styles/default";
+@use "/src/assets/styles/colors";
+
+.formattingPanel {
+  .icons {
+    @include default.icons;
+  }
+
+  .disabledIcons {
+    @include default.disabledIcons;
+  }
+}

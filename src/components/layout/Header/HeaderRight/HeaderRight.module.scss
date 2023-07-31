@@ -1,3 +1,4 @@
+@use "/src/assets/styles/default";
 @use "/src/assets/styles/colors";
 
 .headerRight {
@@ -9,21 +10,16 @@
   justify-content: space-between;
   align-items: center;
 
-  .icons {
-    font-size: 40px;
-    padding: 5px;
-    border-radius: 5px;
-    cursor: pointer;
+  .saving {
+    display: flex;
+    gap: 20px;
+  }
 
-    &:hover {
-      background-color: colors.$active-gray;
-    }
+  .icons {
+    @include default.icons;
   }
 
   .disabledIcons {
-    font-size: 40px;
-    padding: 5px;
-    border-radius: 5px;
-    color: colors.$gray;
+    @include default.disabledIcons;
   }
 }

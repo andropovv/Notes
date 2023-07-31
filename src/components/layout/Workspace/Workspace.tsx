@@ -13,7 +13,20 @@ const Workspace = observer(() => {
 
   if (myNotes.isLoading) return <div>loading</div>;
 
-  return <div className={styleFormat}>{notes && <TextEditor />}</div>;
+  return (
+    <>
+      {notes &&
+        (formatNotes.format === "tile" && myNotes.currentNoteId ? (
+          <div className={styles.fullWorkspace}>
+            <TextEditor />
+          </div>
+        ) : (
+          <div className={styleFormat}>
+            <TextEditor />
+          </div>
+        ))}
+    </>
+  );
 });
 
 export default Workspace;

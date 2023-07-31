@@ -7,6 +7,7 @@ import { observer } from "mobx-react-lite";
 import SaveIcon from "@mui/icons-material/Save";
 import { useIndexedDB } from "react-indexed-db-hook";
 import { editor } from "../../../../editor";
+import FormattingPanel from "../../../shared/FormattingPanel";
 
 interface HeaderRightProps {}
 
@@ -23,7 +24,6 @@ const HeaderRight: FC<HeaderRightProps> = observer(() => {
       myNotes.startLoading();
 
       const newContent = editor.getHTML();
-      console.log(newContent);
 
       await update({
         title: currentNote.title,
@@ -42,13 +42,12 @@ const HeaderRight: FC<HeaderRightProps> = observer(() => {
 
   return (
     <div className={styles.headerRight}>
-      <div>
+      <div className={styles.saving}>
         <SaveIcon className={iconsStyle} onClick={handleSaveChanges} />
-      </div>
-      <h3>{currentNote?.title}</h3>
-      <div>
         <EditIcon className={iconsStyle} />
       </div>
+      <FormattingPanel />
+      <h3>{currentNote?.title}</h3>
     </div>
   );
 });

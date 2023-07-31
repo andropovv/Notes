@@ -1,0 +1,19 @@
+@use "/src/assets/styles/colors";
+
+@mixin icons {
+  font-size: 40px;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: colors.$active-gray;
+  }
+}
+
+@mixin disabledIcons {
+  font-size: 40px;
+  padding: 5px;
+  border-radius: 5px;
+  color: colors.$gray;
+}

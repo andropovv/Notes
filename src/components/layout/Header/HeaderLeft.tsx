@@ -9,6 +9,8 @@ import AddIcon from "@mui/icons-material/Add";
 import AddNoteModal from "../../shared/AddNoteModal";
 import DeleteNoteModal from "../../shared/DeleteNoteModal";
 import { myNotes } from "../../../store/notes";
+import { editor } from "../../../editor";
+import logo from "../../../assets/images/logo.jpg";
 
 const HeaderLeft = observer(() => {
   const [modalAddOpen, setModalAddOpen] = useState<boolean>(false);
@@ -36,10 +38,14 @@ const HeaderLeft = observer(() => {
 
   const handlePressListBtn = (): void => {
     formatNotes.setList();
+    myNotes.setCurrentId(null);
+    editor.commands.clearContent();
   };
 
   const handlePressTileBtn = (): void => {
     formatNotes.setTile();
+    myNotes.setCurrentId(null);
+    editor.commands.clearContent();
   };
 
   return (
@@ -51,6 +57,7 @@ const HeaderLeft = observer(() => {
         />
         <GridViewIcon className={styleTileBtn} onClick={handlePressTileBtn} />
       </div>
+      <img src={logo} alt="Quick Note" className={styles.logo} />
       <div className={styles.addDelBtn}>
         <AddIcon className={styles.icons} onClick={handleAddOpen} />
         {myNotes.currentNoteId ? (
