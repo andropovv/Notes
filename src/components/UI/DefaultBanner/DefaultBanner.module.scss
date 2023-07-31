@@ -1,0 +1,25 @@
+.defaultBanner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 25vh;
+
+  div {
+    height: 200px;
+    overflow: hidden;
+
+    img {
+      height: 250px;
+    }
+  }
+
+  p {
+    font-style: italic;
+    letter-spacing: 0.15rem;
+  }
+
+  * {
+    margin: 0;
+  }
+}

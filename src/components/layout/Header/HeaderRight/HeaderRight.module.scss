@@ -12,7 +12,6 @@
 
   .saving {
     display: flex;
-    gap: 20px;
   }
 
   .icons {
@@ -21,5 +20,20 @@
 
   .disabledIcons {
     @include default.disabledIcons;
+  }
+
+  .editDisabled {
+    @include default.disabledIcons;
+    cursor: pointer;
+
+    &:hover {
+      background-color: colors.$active-gray;
+    }
+  }
+
+  .noteName {
+    width: 200px;
+    text-align: end;
+    overflow: hidden;
   }
 }

@@ -1,5 +1,4 @@
-// @ts-nocheck
-import React, { FC } from "react";
+import { FC, useState } from "react";
 import styles from "./HeaderRight.module.scss";
 import EditIcon from "@mui/icons-material/Edit";
 import { myNotes } from "../../../../store/notes";
@@ -15,6 +14,9 @@ const HeaderRight: FC<HeaderRightProps> = observer(() => {
   const { update, getAll } = useIndexedDB("notes");
   const currentNote = myNotes.getNoteById(myNotes.currentNoteId);
 
+  const [editable, setEditable] = useState<boolean>(true);
+  editor.setEditable(editable);
+
   const iconsStyle = myNotes.currentNoteId
     ? styles.icons
     : styles.disabledIcons;
@@ -26,9 +28,9 @@ const HeaderRight: FC<HeaderRightProps> = observer(() => {
       const newContent = editor.getHTML();
 
       await update({
-        title: currentNote.title,
+        title: currentNote?.title,
         content: newContent,
-        id: currentNote.id,
+        id: currentNote?.id,
       });
 
       const notesFromDB = await getAll();
@@ -40,14 +42,21 @@ const HeaderRight: FC<HeaderRightProps> = observer(() => {
     }
   };
 
+  const handleToggleEditable = () => {
+    setEditable((prevState) => !prevState);
+  };
+
   return (
     <div className={styles.headerRight}>
       <div className={styles.saving}>
         <SaveIcon className={iconsStyle} onClick={handleSaveChanges} />
-        <EditIcon className={iconsStyle} />
+        <EditIcon
+          className={editable ? iconsStyle : styles.editDisabled}
+          onClick={handleToggleEditable}
+        />
       </div>
       <FormattingPanel />
-      <h3>{currentNote?.title}</h3>
+      <h3 className={styles.noteName}>{currentNote?.title}</h3>
     </div>
   );
 });

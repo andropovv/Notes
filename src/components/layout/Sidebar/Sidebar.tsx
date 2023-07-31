@@ -3,6 +3,7 @@ import styles from "./Sidebar.module.scss";
 import { formatNotes } from "../../../store/notesFormat";
 import { myNotes } from "../../../store/notes";
 import ListItem from "../../shared/ListItem";
+import SidebarCreateNote from "../../shared/SidebarCreateNote";
 
 const Sidebar = observer(() => {
   const { notes } = myNotes;
@@ -16,10 +17,13 @@ const Sidebar = observer(() => {
 
   return (
     <div className={sidebarStyles}>
-      {notes &&
+      {notes[0] ? (
         notes.map((n) => (
           <ListItem id={n.id} key={n.id} title={n.title} content={n.content} />
-        ))}
+        ))
+      ) : (
+        <SidebarCreateNote />
+      )}
     </div>
   );
 });

@@ -5,6 +5,9 @@
   .icons {
     @include default.icons;
   }
+  .active {
+    @include default.activeIcon;
+  }
 
   .disabledIcons {
     @include default.disabledIcons;

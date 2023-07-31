@@ -11,12 +11,13 @@
 
   &:hover {
     border-radius: 8px;
-    border: none;
     background-color: colors.$active-gray;
   }
 
-  h4 {
+  .title {
     margin: 0;
+    width: 300px;
+    overflow: hidden;
     font-size: larger;
   }
 
@@ -32,6 +33,7 @@
 
 .active {
   border-radius: 8px;
-  border: none;
+  border-color: colors.$orange;
+
   background-color: colors.$active-gray;
 }

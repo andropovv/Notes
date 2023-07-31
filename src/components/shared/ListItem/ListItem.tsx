@@ -25,7 +25,7 @@ const ListItem: FC<ListItemProps> = observer(({ title, id, content }) => {
 
   return (
     <div className={itemStyle} onClick={handleClick}>
-      <h4>{title}</h4>
+      <h4 className={styles.title}>{title}</h4>
       <div className={styles.content}>
         <p>{parse(content)}</p>
       </div>

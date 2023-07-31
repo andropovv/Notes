@@ -16,6 +16,11 @@
   overflow: auto;
 }
 
+.banner {
+  display: flex;
+  justify-content: center;
+}
+
 .workspaceForList {
   animation: open-space 1s;
 }

@@ -10,7 +10,7 @@ import AddNoteModal from "../../shared/AddNoteModal";
 import DeleteNoteModal from "../../shared/DeleteNoteModal";
 import { myNotes } from "../../../store/notes";
 import { editor } from "../../../editor";
-import logo from "../../../assets/images/logo.jpg";
+import logo from "../../../assets/images/grayLogo.jpg";
 
 const HeaderLeft = observer(() => {
   const [modalAddOpen, setModalAddOpen] = useState<boolean>(false);

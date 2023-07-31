@@ -5,13 +5,10 @@ import HeaderRight from "./HeaderRight";
 
 const Header: FC = () => {
   return (
-    <>
-      <div className={styles.placeholder}></div>
-      <div className={styles.header}>
-        <HeaderLeft />
-        <HeaderRight />
-      </div>
-    </>
+    <div className={styles.header}>
+      <HeaderLeft />
+      <HeaderRight />
+    </div>
   );
 };
 

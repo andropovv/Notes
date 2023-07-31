@@ -4,7 +4,21 @@
   font-size: 40px;
   padding: 5px;
   border-radius: 5px;
+  margin: 4px;
   cursor: pointer;
+
+  &:hover {
+    background-color: colors.$active-gray;
+  }
+}
+
+@mixin activeIcon {
+  font-size: 40px;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 4px;
+  border: 1px solid colors.$gray;
 
   &:hover {
     background-color: colors.$active-gray;
@@ -14,6 +28,8 @@
 @mixin disabledIcons {
   font-size: 40px;
   padding: 5px;
+  margin: 4px;
+
   border-radius: 5px;
   color: colors.$gray;
 }
