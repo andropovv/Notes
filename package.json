@@ -1,8 +1,10 @@
 {
-  "name": "notes",
-  "private": true,
-  "version": "0.0.0",
+  "name": "QuickNote",
+  "private": false,
+  "version": "1.0.0",
+  "description": "An application for creating, editing and saving notes in the browser",
   "type": "module",
+  "author": "Andrey Kuznetsov",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
