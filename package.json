@@ -5,6 +5,7 @@
   "description": "An application for creating, editing and saving notes in the browser",
   "type": "module",
   "author": "Andrey Kuznetsov",
+  "licence": "ISC",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
